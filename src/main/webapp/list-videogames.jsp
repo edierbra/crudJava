@@ -78,7 +78,8 @@
 <script>
     // Verificar si el mensaje de eliminación existe en el objeto request
     var deleteMessage = "${requestScope.deleteMessage}";
-
+    var updateMessage = "${requestScope.updateMessage}";
+    var createMessage = "${requestScope.createMessage}";
     if (deleteMessage) {
         // Mostrar mensaje de eliminación utilizando SweetAlert
         if (deleteMessage === "error_1") {
@@ -95,8 +96,38 @@
             });
         }
     }
+    if (updateMessage) {
+        // Mostrar mensaje de eliminación utilizando SweetAlert
+        if (updateMessage === "error_1") {
+            swal({
+                title: "Exito",
+                text: "Se actualizó correctamente el Videojuego",
+                icon: "success"
+            });
+        } else if(updateMessage === "error_2"){
+            swal({
+                title: "Error",
+                text: "Error al actualizar el Videojuego, intentelo otra vez",
+                icon: "error"
+            });
+        }
+    }
+    if (createMessage) {
+        // Mostrar mensaje de eliminación utilizando SweetAlert
+        if (createMessage === "error_1") {
+            swal({
+                title: "Exito",
+                text: "Se creó correctamente el Videojuego",
+                icon: "success"
+            });
+        } else if(createMessage === "error_2"){
+            swal({
+                title: "Error",
+                text: "Error al crear el Videojuego, intentelo otra vez",
+                icon: "error"
+            });
+        }
+    }
+    
 </script>
-
-
-
 
