@@ -1,0 +1,16 @@
+edu\unicauca\apliweb\persistence\jpa\UsuariosJpaController.class
+edu\unicauca\apliweb\persistence\entities\Usuarios_.class
+edu\unicauca\apliweb\persistence\entities\Videojuegos.class
+edu\unicauca\apliweb\persistence\jpa\exceptions\PreexistingEntityException.class
+edu\unicauca\apliweb\persistence\jpa\exceptions\IllegalOrphanException.class
+edu\unicauca\apliweb\persistence\entities\Plataformas.class
+edu\unicauca\apliweb\persistence\entities\Usuarios.class
+edu\unicauca\apliweb\persistence\jpa\CategoriasJpaController.class
+edu\unicauca\apliweb\persistence\jpa\PlataformasJpaController.class
+edu\unicauca\apliweb\persistence\entities\Categorias_.class
+edu\unicauca\apliweb\control\ServletAppVideoGames.class
+edu\unicauca\apliweb\persistence\entities\Videojuegos_.class
+edu\unicauca\apliweb\persistence\jpa\exceptions\NonexistentEntityException.class
+edu\unicauca\apliweb\persistence\jpa\VideojuegosJpaController.class
+edu\unicauca\apliweb\persistence\entities\Plataformas_.class
+edu\unicauca\apliweb\persistence\entities\Categorias.class
