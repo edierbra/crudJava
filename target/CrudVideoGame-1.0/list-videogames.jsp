@@ -6,6 +6,7 @@
         <title>Lista de Videojuegos</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     </head>
     <body>
         <header>
@@ -73,6 +74,29 @@
         </div>
     </body>
 </html>
+
+<script>
+    // Verificar si el mensaje de eliminación existe en el objeto request
+    var deleteMessage = "${requestScope.deleteMessage}";
+
+    if (deleteMessage) {
+        // Mostrar mensaje de eliminación utilizando SweetAlert
+        if (deleteMessage === "error_1") {
+            swal({
+                title: "Exito",
+                text: "Se elimino correctamente el Videojuego",
+                icon: "success"
+            });
+        } else if(deleteMessage === "error_2"){
+            swal({
+                title: "Error",
+                text: "Error al eliminar el Videojuego, intentelo otra vez",
+                icon: "error"
+            });
+        }
+    }
+</script>
+
 
 
 

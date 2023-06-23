@@ -9,6 +9,7 @@ import edu.unicauca.apliweb.persistence.jpa.VideojuegosJpaController;
 import edu.unicauca.apliweb.persistence.jpa.exceptions.NonexistentEntityException;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.net.URLEncoder;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.logging.Level;
@@ -113,25 +114,22 @@ public class ServletAppVideoGames extends HttpServlet {
 
     //Elimina un cliente de la BD
     private void deleteVideoGame(HttpServletRequest request, HttpServletResponse response)
-            throws SQLException, IOException {
+            throws SQLException, IOException, ServletException {
         //Recibe el ID del cliente que se espera eliminar de la BD
         int idVideojuegoPk = Integer.parseInt(request.getParameter("idVideojuegoPk"));
         try {
             //Elimina el cliente con el id indicado
             videogamesJPA.destroy(idVideojuegoPk);
 
-            // Mostrar mensaje de éxito en una ventana emergente
-            String message = "El videojuego se ha eliminado exitosamente";
-            String script = "<script>alert('" + message + "');</script>";
-            response.setContentType("text/html");
-            PrintWriter out = response.getWriter();
-            out.println(script);
-
+            String deleteMessage = "error_1";
+            request.setAttribute("deleteMessage", deleteMessage);
         } catch (NonexistentEntityException ex) {
-
             Logger.getLogger(ServletAppVideoGames.class.getName()).log(Level.SEVERE, null, ex);
+            String deleteMessage = "error_2";
+            request.setAttribute("deleteMessage", deleteMessage);
         }
-        response.sendRedirect("list");
+
+        request.getRequestDispatcher("list").forward(request, response);
     }
 
     //muestra el formulario para editar un usuario
@@ -193,6 +191,7 @@ public class ServletAppVideoGames extends HttpServlet {
         }
         response.sendRedirect("list");
     }*/
+
     /**
      * Procesa las peticiones HTTP <code>GET</code>.
      *
