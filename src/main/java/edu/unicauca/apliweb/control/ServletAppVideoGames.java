@@ -119,11 +119,13 @@ public class ServletAppVideoGames extends HttpServlet {
         try {
             //Elimina el cliente con el id indicado
             videogamesJPA.destroy(idVideojuegoPk);
+
+            // Mostrar mensaje de éxito en una ventana emergente
+            String message = "El videojuego se ha eliminado exitosamente";
+            String script = "<script>alert('" + message + "');</script>";
             response.setContentType("text/html");
             PrintWriter out = response.getWriter();
-            out.println("<html><body>");
-            out.println("<h2>El videojuego se ha eliminado exitosamente</h2>");
-            out.println("</body></html>");
+            out.println(script);
 
         } catch (NonexistentEntityException ex) {
 
